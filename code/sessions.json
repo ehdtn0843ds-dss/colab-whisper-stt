@@ -1,0 +1,30 @@
+[
+  {
+    "id": "01_keynote",
+    "source_file": "keynote.m4a",
+    "recorded_kst": "2026-01-01 10:00-11:00",
+    "session": "Example keynote (mostly English, some Korean)",
+    "default_language": "en",
+    "hotwords": [
+      "NVIDIA",
+      "Omniverse",
+      "Isaac Sim",
+      "OpenUSD",
+      "digital twin",
+      "디지털 트윈"
+    ]
+  },
+  {
+    "id": "02_talk_ko",
+    "source_file": "talk_ko.m4a",
+    "recorded_kst": "2026-01-01 13:00-13:30",
+    "session": "Example Korean talk with English jargon",
+    "default_language": "ko",
+    "hotwords": [
+      "CAD",
+      "URDF",
+      "강화학습",
+      "시뮬레이션"
+    ]
+  }
+]

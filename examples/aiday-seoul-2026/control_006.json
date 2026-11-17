@@ -1,0 +1,40 @@
+{
+  "code_dir": "code_v4",
+  "audio_variants": {},
+  "run_pilot": true,
+  "pilot_runs": [
+    {
+      "tag": "full_v3",
+      "file_id": "01_plenary",
+      "audio": "raw",
+      "vad_audio": "raw",
+      "start": 0,
+      "duration": 0,
+      "args": "--vad-threshold 0.35 --context-chars 160 --min-chunk-s 1.0 --fill-gaps-s 3 --drop-stock-phrases 0"
+    },
+    {
+      "tag": "full_v2",
+      "file_id": "01_plenary",
+      "audio": "raw",
+      "vad_audio": "raw",
+      "start": 0,
+      "duration": 0,
+      "args": "--model large-v2 --vad-threshold 0.35 --context-chars 160 --min-chunk-s 1.0 --fill-gaps-s 3 --drop-stock-phrases 0"
+    },
+    {
+      "tag": "patch_qna_en",
+      "file_id": "05_experts_qna",
+      "audio": "raw",
+      "vad_audio": "raw",
+      "start": 1107,
+      "duration": 53.4,
+      "args": "--languages en --vad-threshold 0.35 --context-chars 160 --min-chunk-s 1.0 --drop-stock-phrases 0"
+    }
+  ],
+  "run_full": false,
+  "full_tag": "unused",
+  "full_audio": "raw",
+  "full_vad_audio": "raw",
+  "full_args": "",
+  "full_ids": []
+}

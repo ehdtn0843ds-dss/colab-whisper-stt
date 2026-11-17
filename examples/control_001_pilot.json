@@ -1,0 +1,33 @@
+{
+  "code_dir": "code",
+  "audio_variants": {
+    "loudnorm": "highpass=f=80,loudnorm=I=-18:TP=-2:LRA=11"
+  },
+  "run_pilot": true,
+  "pilot_runs": [
+    {
+      "tag": "pilot_raw",
+      "file_id": "01_keynote",
+      "audio": "raw",
+      "vad_audio": "raw",
+      "start": 600,
+      "duration": 120,
+      "args": "--vad-threshold 0.35 --context-chars 160 --min-chunk-s 1.0 --fill-gaps-s 3"
+    },
+    {
+      "tag": "pilot_loudnorm",
+      "file_id": "01_keynote",
+      "audio": "loudnorm",
+      "vad_audio": "loudnorm",
+      "start": 600,
+      "duration": 120,
+      "args": "--vad-threshold 0.35 --context-chars 160 --min-chunk-s 1.0 --fill-gaps-s 3"
+    }
+  ],
+  "run_full": false,
+  "full_tag": "unused",
+  "full_audio": "raw",
+  "full_vad_audio": "raw",
+  "full_args": "",
+  "full_ids": []
+}
