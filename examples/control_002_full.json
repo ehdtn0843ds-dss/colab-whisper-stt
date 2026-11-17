@@ -8,5 +8,5 @@
   "full_audio": "raw",
   "full_vad_audio": "raw",
   "full_args": "--vad-threshold 0.35 --context-chars 160 --min-chunk-s 1.0 --fill-gaps-s 3",
-  "full_ids": ["01_keynote", "02_talk_ko"]
+  "full_ids": ["01_lecture", "02_meeting"]
 }

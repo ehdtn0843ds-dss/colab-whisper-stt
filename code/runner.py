@@ -217,7 +217,7 @@ def main(BASE, control, CODE, setup_info, *, ffmpeg='ffmpeg', audio_work=None,
     pilots, full = [], []
     runs, artifacts, results = [], [], []
     error = None
-    zip_path = zip_dir / f'aiday_{name}.zip'
+    zip_path = zip_dir / f'stt_{name}.zip'
     write_status(base, 'starting', control=name, versions=setup_info.get('versions', {}),
                  download_triggered=False, colab=drive is not None)
     try:

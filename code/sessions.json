@@ -1,30 +1,34 @@
 [
   {
-    "id": "01_keynote",
-    "source_file": "keynote.m4a",
-    "recorded_kst": "2026-01-01 10:00-11:00",
-    "session": "Example keynote (mostly English, some Korean)",
-    "default_language": "en",
+    "id": "01_lecture",
+    "source_file": "deep_learning_week3.m4a",
+    "recorded_kst": "2026-03-17 10:30-12:00",
+    "session": "Lecture in Korean with English technical terms",
+    "default_language": "ko",
     "hotwords": [
-      "NVIDIA",
-      "Omniverse",
-      "Isaac Sim",
-      "OpenUSD",
-      "digital twin",
-      "디지털 트윈"
+      "PyTorch",
+      "Transformer",
+      "attention",
+      "fine-tuning",
+      "backpropagation",
+      "역전파",
+      "경사하강법",
+      "손실 함수"
     ]
   },
   {
-    "id": "02_talk_ko",
-    "source_file": "talk_ko.m4a",
-    "recorded_kst": "2026-01-01 13:00-13:30",
-    "session": "Example Korean talk with English jargon",
-    "default_language": "ko",
+    "id": "02_meeting",
+    "source_file": "weekly_sync.m4a",
+    "recorded_kst": "2026-03-18 16:00-16:45",
+    "session": "Team meeting that switches between Korean and English",
+    "default_language": "en",
     "hotwords": [
-      "CAD",
-      "URDF",
-      "강화학습",
-      "시뮬레이션"
+      "roadmap",
+      "sprint",
+      "KPI",
+      "Jira",
+      "스프린트",
+      "배포"
     ]
   }
 ]

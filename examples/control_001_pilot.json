@@ -7,7 +7,7 @@
   "pilot_runs": [
     {
       "tag": "pilot_raw",
-      "file_id": "01_keynote",
+      "file_id": "01_lecture",
       "audio": "raw",
       "vad_audio": "raw",
       "start": 600,
@@ -16,7 +16,7 @@
     },
     {
       "tag": "pilot_loudnorm",
-      "file_id": "01_keynote",
+      "file_id": "01_lecture",
       "audio": "loudnorm",
       "vad_audio": "loudnorm",
       "start": 600,

@@ -1,7 +1,7 @@
 """Turn a stt_core.py result JSON into a readable transcript (.txt) and subtitles (.srt).
 
 Usage:
-    python export_text.py out/full_v3/01_keynote.json            # writes .txt and .srt next to it
+    python export_text.py out/full_v3/01_lecture.json             # writes .txt and .srt next to it
     python export_text.py out/full_v3/*.json --formats txt         # only .txt
 """
 import argparse

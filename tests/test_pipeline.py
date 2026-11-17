@@ -118,9 +118,9 @@ class CharTokenizer:
 
 
 def test_hotword_budget_keeps_priority_prefix():
-    used, dropped, count = stt_core.budget_hotwords(['NVIDIA', 'Omniverse', 'Isaac Sim'], CharTokenizer(), 20)
-    assert used == ['NVIDIA', 'Omniverse'] and dropped == ['Isaac Sim']
-    assert count == len(' NVIDIA, Omniverse')
+    used, dropped, count = stt_core.budget_hotwords(['PyTorch', 'Transformer', 'fine-tuning'], CharTokenizer(), 22)
+    assert used == ['PyTorch', 'Transformer'] and dropped == ['fine-tuning']
+    assert count == len(' PyTorch, Transformer')
 
 
 def test_trim_context_tokens_keeps_word_boundary_suffix():
@@ -152,10 +152,10 @@ out.mkdir(parents=True, exist_ok=True)
 
 @pytest.mark.skipif(shutil.which('ffmpeg') is None, reason='ffmpeg not installed')
 def test_runner_end_to_end(tmp_path):
-    base = tmp_path / 'aiday_stt'
+    base = tmp_path / 'whisper_stt'
     (base / 'audio').mkdir(parents=True)
     subprocess.run(['ffmpeg', '-loglevel', 'error', '-f', 'lavfi', '-i', 'sine=frequency=440:duration=2',
-                    '-c:a', 'aac', str(base / 'audio' / '01_keynote.m4a')], check=True)
+                    '-c:a', 'aac', str(base / 'audio' / '01_lecture.m4a')], check=True)
     code = base / 'code'
     code.mkdir()
     shutil.copy(CODE / 'sessions.json', code / 'sessions.json')
@@ -178,11 +178,11 @@ def test_runner_end_to_end(tmp_path):
     status = json.loads((base / 'out' / 'STATUS.json').read_text())
     assert status['stage'] == 'done'
     # The loudnorm variant was rendered to 16 kHz mono WAV and passed to the core.
-    data = json.loads((base / 'out' / 'pilot_loudnorm' / '01_keynote.json').read_text())
-    assert data['config']['audio'].endswith('loudnorm/01_keynote.wav')
+    data = json.loads((base / 'out' / 'pilot_loudnorm' / '01_lecture.json').read_text())
+    assert data['config']['audio'].endswith('loudnorm/01_lecture.wav')
     import zipfile
     names = zipfile.ZipFile(result['zip']).namelist()
-    assert 'report_control_001_pilot.md' in names and 'pilot_raw/01_keynote.json' in names
+    assert 'report_control_001_pilot.md' in names and 'pilot_raw/01_lecture.json' in names
 
 
 def test_export_text_formats():
