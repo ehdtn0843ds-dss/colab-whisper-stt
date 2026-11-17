@@ -1,10 +1,10 @@
 # Real run: a full day of conference recordings
 
-These are the actual files from the run that produced the numbers in the main README and the guide: five recordings from a tech conference (NVIDIA AI Day Seoul 2026), mixing a Korean host, English keynotes, Korean booth demos with English product names, and a Korean/English expert Q&A.
+These are the actual files from the run that produced the numbers in the main README and the guide: five recordings from a tech conference (NVIDIA AI Day Seoul 2026), with a Korean host, English keynotes, Korean booth demos full of English product names, and an expert Q&A in both languages.
 
 | File | What it shows |
 |---|---|
-| `sessions.json` | Five sessions with `default_language` and hotword lists of 17–42 terms each |
+| `sessions.json` | Five sessions with `default_language` and hotword lists of 17 to 42 terms each |
 | `control_004.json` | Every file with large-v3 and large-v2, side by side |
 | `control_006.json` | The final run: one long file with both models, plus a 53-second passage re-run with the language forced to English |
 

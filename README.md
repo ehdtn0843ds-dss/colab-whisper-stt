@@ -5,27 +5,27 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ehdtn0843ds-dss/colab-whisper-stt/blob/main/notebook/colab_whisper_stt.ipynb)
 [![Guide](https://img.shields.io/badge/guide-EN%20%7C%20%ED%95%9C%EA%B5%AD%EC%96%B4-f26b1d)](https://ehdtn0843ds-dss.github.io/colab-whisper-stt/)
 
-**Whisper on Colab for recordings that mix Korean and English.**
+A Colab notebook for transcribing recordings where Korean and English are mixed. It runs faster-whisper large-v3 on a free T4 GPU and picks the language for each speech chunk, so it can follow a Korean lecture full of English terms or a meeting that switches to English partway through.
 
-Lectures full of English terms, meetings that switch languages mid-conversation, conference talks with a Korean host and an English speaker, interviews, podcasts. Plain Whisper tends to lock onto one language, mangle jargon, and invent sentences over silence. This notebook runs **faster-whisper large-v3** on a free Colab T4 and handles those cases.
+Plain Whisper tends to stick to one language for the whole file and to get jargon wrong. It also makes up sentences over silence and music. The notebook works around each of these (see the table below).
 
-📖 **Full walkthrough (blog-style, English / 한국어): https://ehdtn0843ds-dss.github.io/colab-whisper-stt/**
+Full guide in English and Korean: https://ehdtn0843ds-dss.github.io/colab-whisper-stt/
 
 ## Good fit for
 
-- 🎓 Lectures and seminars in Korean with English technical terms
-- 💼 Meetings where people switch between Korean and English
-- 🎤 Conference talks, panels and Q&A
-- 🎙️ Interviews, podcasts and YouTube videos with mixed speech
+- Lectures and seminars in Korean with English technical terms
+- Meetings where people switch between Korean and English
+- Conference talks, panels and Q&A
+- Interviews, podcasts and YouTube videos with mixed speech
 
 ## What it does
 
 | Problem with plain Whisper | What this notebook does |
 |---|---|
-| Korean and English switch within one file | Picks `ko` or `en` **per speech chunk**; short ambiguous chunks keep the previous language |
-| Names and jargon come out wrong | Per-recording **hotword list**, in priority order, within a 120-token budget |
+| Korean and English switch within one file | Picks `ko` or `en` per speech chunk; short ambiguous chunks keep the previous language |
+| Names and jargon come out wrong | Per-recording hotword list, in priority order, within a 120-token budget |
 | Silence, music and applause turn into invented lines | Transcribes VAD speech chunks, drops repeated segments and subtitle-credit phrases |
-| Colab disconnects in the middle of a long file | Saves ~10-minute blocks to Drive; finished blocks are **skipped on restart** |
+| Colab disconnects in the middle of a long file | Saves ~10-minute blocks to Drive; finished blocks are skipped on restart |
 
 ## How fast
 
@@ -40,11 +40,11 @@ Peak GPU memory was 4.9 GB of 15 GB. These are speed and confidence figures from
 
 ## Quick start
 
-1. Click **Open in Colab** and set `Runtime → Change runtime type → T4 GPU`.
-2. Run **SETUP**, then **BOOTSTRAP**. It creates `MyDrive/whisper_stt/` and copies the code and templates there.
+1. Click Open in Colab and set `Runtime → Change runtime type → T4 GPU`.
+2. Run SETUP, then BOOTSTRAP. It creates `MyDrive/whisper_stt/` and copies the code and templates there.
 3. Put recordings in `MyDrive/whisper_stt/audio/<id>.m4a` and describe each one in `code/sessions.json` (main language + hotwords).
 4. Start with the pilot control file (two minutes, two settings), then switch to [`examples/control_002_full.json`](examples/control_002_full.json).
-5. Run **MOUNT_AND_LOAD** and **RUN**. A zip with the transcripts downloads when it finishes.
+5. Run MOUNT_AND_LOAD and RUN. A zip with the transcripts downloads when it finishes.
 
 ```
 MyDrive/whisper_stt/
